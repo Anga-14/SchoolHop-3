@@ -19,6 +19,10 @@ non-profit providing safe rural school transport in the Eastern Cape.
 - Campaign dashboard with realistic sample data, KPIs, measurement plan,
   interpretation and optimisation recommendations.
 - Welcome and promotional email copy with website-linked calls to action.
+- Target-audience profiles with motivations, objections, needs and channels.
+- Awareness-to-advocacy digital-marketing funnel.
+- SEO keyword strategy, paid-search advert and monthly budget assumptions.
+- Five social-media posts and a one-week content calendar.
 - Landing-page variants and an A/B testing hypothesis.
 - Usability-test report and feedback-based improvements.
 - Platform diagnostic for the final demonstration.
