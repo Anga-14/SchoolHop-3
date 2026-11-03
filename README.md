@@ -25,6 +25,9 @@ non-profit providing safe rural school transport in the Eastern Cape.
 - Five social-media posts and a one-week content calendar.
 - Customer persona, one-page optimisation recommendation, contribution log and
   individual learning reflection are included in the final delivery section.
+- Detailed SEO keyword groups and on-page implementation checklist.
+- Controlled paid-search pilot with CPC, traffic, enquiry and budget assumptions.
+- Expanded sample email-funnel interpretation and pre-production testing checklist.
 - Landing-page variants and an A/B testing hypothesis.
 - Usability-test report and feedback-based improvements.
 - Platform diagnostic for the final demonstration.
