@@ -14,6 +14,8 @@ non-profit providing safe rural school transport in the Eastern Cape.
   - `#/sponsor`
   - `#/contact`
 - Interactive forms with required-field and email validation.
+- Three-step sponsorship journey: sponsor details, support selection and
+  confirmation before submission.
 - Clear success and error messages.
 - Browser `localStorage` lead storage under the `schoolhop-leads` key.
 - Campaign dashboard with realistic sample data, KPIs, measurement plan,

@@ -1328,89 +1328,53 @@ Partner with SchoolHop and create a better future today.
         for rural learners across the Eastern Cape.
     </p>
  
+    <div class="progress-container" aria-label="Sponsorship application progress">
+        <div id="prog-step-1" class="progress-step active">1. Your details</div>
+        <div id="prog-step-2" class="progress-step">2. Sponsorship</div>
+        <div id="prog-step-3" class="progress-step">3. Confirm</div>
+    </div>
+
     <form id="sponsor-form">
- 
-        <label for="sponsor-name">
-            Organisation / Sponsor Name
-        </label>
- 
-        <input
-            type="text"
-            id="sponsor-name"
-            required
-        >
- 
-        <label for="contact-person">
-            Contact Person
-        </label>
- 
-        <input
-            type="text"
-            id="contact-person"
-            required
-        >
- 
-        <label for="email">
-            Email Address
-        </label>
- 
-        <input
-            type="email"
-            id="email"
-            required
-        >
- 
-        <label for="phone">
-            Phone Number
-        </label>
- 
-        <input
-            type="tel"
-            id="phone"
-            required
-        >
- 
-        <label for="tier">
-            Sponsorship Type
-        </label>
- 
-        <select id="tier" required>
- 
-            <option value="">
-                Select Sponsorship
-            </option>
- 
-            <option value="Sponsor 1 Learner">
-                Sponsor 1 Learner (R500/month)
-            </option>
- 
-            <option value="Sponsor 10 Learners">
-                Sponsor 10 Learners (R5,000/month)
-            </option>
- 
-            <option value="Village Route">
-                Sponsor a Village Route (R15,000/month)
-            </option>
- 
-            <option value="Fleet Support">
-                Sponsor Fleet Maintenance
-            </option>
- 
-        </select>
- 
-        <label for="sponsor-message">
-            Additional Information
-        </label>
- 
-        <textarea
-            id="sponsor-message"
-            rows="5"
-        ></textarea>
- 
-        <button type="submit">
-            Submit Sponsorship Application
-        </button>
- 
+        <div id="step-1" class="form-step active">
+            <h3>Tell us about you</h3>
+            <label for="sponsor-name">Organisation / Sponsor Name</label>
+            <input type="text" id="sponsor-name" required>
+            <label for="contact-person">Contact Person</label>
+            <input type="text" id="contact-person" required>
+            <button type="button" onclick="goToStep2(event)">Continue to sponsorship options</button>
+        </div>
+
+        <div id="step-2" class="form-step">
+            <h3>Choose your support</h3>
+            <p>Thank you, <strong id="display-org-name"></strong>. Select the option you would like to discuss.</p>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+            <label for="tier">Sponsorship Type</label>
+            <select id="tier" required>
+                <option value="">Select Sponsorship</option>
+                <option value="Sponsor 1 Learner">Sponsor 1 Learner (R500/month)</option>
+                <option value="Sponsor 10 Learners">Sponsor 10 Learners (R5,000/month)</option>
+                <option value="Village Route">Sponsor a Village Route (R15,000/month)</option>
+                <option value="Fleet Support">Sponsor Fleet Maintenance</option>
+            </select>
+            <label for="sponsor-message">Additional Information</label>
+            <textarea id="sponsor-message" rows="5"></textarea>
+            <button class="back-btn" type="button" onclick="goToStep1()">Back</button>
+            <button type="button" onclick="goToStep3(event)">Review application</button>
+        </div>
+
+        <div id="step-3" class="form-step">
+            <div class="success-card">
+                <div class="success-icon" aria-hidden="true">✓</div>
+                <h3>Review your sponsorship enquiry</h3>
+                <p><strong id="final-org-name"></strong>, your details are ready to submit.</p>
+                <p>We will contact you at <strong id="final-email"></strong> to discuss your selected sponsorship option.</p>
+                <button class="back-btn" type="button" onclick="goToStep2(event)">Edit details</button>
+                <button type="submit">Submit Sponsorship Application</button>
+            </div>
+        </div>
     </form>
  
     <div id="sponsor-status"></div>
@@ -1955,10 +1919,15 @@ Partner with SchoolHop and create a better future today.
  
     function goToStep2(event) {
         event.preventDefault();
- 
-        orgName = document
-            .getElementById("sponsor-name")
-            .value;
+        const sponsorNameField = document.getElementById("sponsor-name");
+        const contactPersonField = document.getElementById("contact-person");
+        if (!sponsorNameField.value.trim() || !contactPersonField.value.trim()) {
+            sponsorNameField.reportValidity();
+            contactPersonField.reportValidity();
+            return;
+        }
+
+        orgName = sponsorNameField.value.trim();
  
         document
             .getElementById("display-org-name")
@@ -2001,10 +1970,17 @@ Partner with SchoolHop and create a better future today.
  
     function goToStep3(event) {
         event.preventDefault();
- 
-        const email = document
-            .getElementById("email")
-            .value;
+        const emailField = document.getElementById("email");
+        const phoneField = document.getElementById("phone");
+        const tierField = document.getElementById("tier");
+        if (!emailField.checkValidity() || !phoneField.value.trim() || !tierField.value) {
+            emailField.reportValidity();
+            phoneField.reportValidity();
+            tierField.reportValidity();
+            return;
+        }
+
+        const email = emailField.value.trim();
  
         document
             .getElementById("final-org-name")
@@ -2054,6 +2030,13 @@ if(sponsorForm){
         status.style.marginTop = "15px";
  
         sponsorForm.reset();
+        document.getElementById("step-3").classList.remove("active");
+        document.getElementById("step-1").classList.add("active");
+        document.getElementById("prog-step-3").classList.remove("active");
+        document.getElementById("prog-step-1").classList.add("active");
+        document.getElementById("display-org-name").innerText = "";
+        document.getElementById("final-org-name").innerText = "";
+        document.getElementById("final-email").innerText = "";
  
     });
  
