@@ -23,6 +23,8 @@ non-profit providing safe rural school transport in the Eastern Cape.
 - Awareness-to-advocacy digital-marketing funnel.
 - SEO keyword strategy, paid-search advert and monthly budget assumptions.
 - Five social-media posts and a one-week content calendar.
+- Customer persona, one-page optimisation recommendation, contribution log and
+  individual learning reflection are included in the final delivery section.
 - Landing-page variants and an A/B testing hypothesis.
 - Usability-test report and feedback-based improvements.
 - Platform diagnostic for the final demonstration.
@@ -81,6 +83,14 @@ long source filename to `site/index.html` and deploys it automatically on
 pushes to `main`. In GitHub, enable **Settings → Pages → Source: GitHub
 Actions** once. After the workflow succeeds, the public URL will be:
 `https://anga-14.github.io/SchoolHop-3/`.
+
+## Assessment handover
+
+The deployed application includes the target-audience profile, named customer
+persona, funnel, campaign strategy, SEO and paid-search plan, social assets,
+two-email sequence, KPI and measurement plan, analytics dashboard, data-based
+optimisation recommendation, individual contribution log and learning
+reflection. The final group presentation remains a separate deliverable.
 
 ## Campaign summary
 
