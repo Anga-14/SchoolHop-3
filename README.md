@@ -72,8 +72,11 @@ Vercel:
    `localStorage` after deployment.
 4. Replace the demo storage with a secure API before accepting real enquiries.
 
-The current workspace contains the deployment-ready files and instructions.
-Actual publication requires access to the owner's GitHub or hosting account.
+The repository includes `.github/workflows/deploy-pages.yml`, which copies the
+long source filename to `site/index.html` and deploys it automatically on
+pushes to `main`. In GitHub, enable **Settings → Pages → Source: GitHub
+Actions** once. After the workflow succeeds, the public URL will be:
+`https://anga-14.github.io/SchoolHop-3/`.
 
 ## Campaign summary
 
